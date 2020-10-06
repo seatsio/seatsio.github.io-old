@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.seatsio.net/chart.js"></script>
+</head>
+<body>
+<div id="chart" style="height: 100vh;"></div>
+
+<script>
+    new seatsio.SeatingChart({
+        divId: 'chart',
+        event: 'e1b652d0-501a-4ba7-8d7f-55fbaf0d5a09',
+        workspaceKey: 'publicDemoKey',
+        pricing: [
+            {
+                'category': 'Balcony',
+                'ticketTypes': [{
+                    'ticketType': 'Adult',
+                    'price': 40
+                },
+                    {
+                        'ticketType': 'Child (< 18)',
+                        'price': 30
+                    }
+                ]
+            },
+            {
+                'category': 'Ground Floor',
+                'ticketTypes': [{
+                    'ticketType': 'Adult',
+                    'price': 50
+                },
+                    {
+                        'ticketType': 'Child (< 18)',
+                        'price': 40
+                    }
+                ]
+            },
+            {
+                'category': 'Wheelchair',
+                'price': 25
+            }
+        ],
+        priceFormatter: price => price + '€',
+        categoryFilter: {
+            enabled: true,
+        },
+        showFullScreenButton: false
+    }).render()
+</script>
+</body>
+</html>
