@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn-staging.seatsio.net/chart.js"></script>
+</head>
+<body>
+<div id="chart" style="height: 70vh;"></div>
+
+<script>
+    new seatsio.SeatingChart({
+        divId: 'chart',
+        event: '8f9d12d7-ec0b-423c-afa6-6eaaeb3657dd',
+        workspaceKey: 'publicDemoKey',
+        pricing: [
+            {
+                'category': 'Upper level',
+                'price': '30'
+            },
+            {
+                'category': 'Lower level',
+                'price': '40'
+            },
+            {
+                'category': 'Ground floor',
+                'price': '50'
+            },
+            {
+                'category': 'Ground floor premium',
+                'price': '60'
+            }
+        ],
+        priceFormatter: price => price + '€',
+        showLegend: true,
+        showFullScreenButton: false
+    }).render()
+</script>
+
+</body>
+</html>
